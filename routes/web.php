@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\userController;
+use App\Http\Controllers\usingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,12 @@ Route::get('users/{name}', [userController::class, 'loadView']);
 
 // pass id url rote from controller
 // Route::get('controller/{id}', [userController::class, 'pass']);
+
+// header component run
+// Route::view('header', 'components/header');
+
+// view add
+Route::view('about', 'about');
+
+// test blade
+Route::get('test', [usingController::class, 'test']);
