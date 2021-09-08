@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\userController;
 use App\Http\Controllers\usingController;
+use App\Http\Controllers\formController;
+use App\Http\Controllers\db_controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +28,7 @@ Route::get('/', function () {
 // });
 
 // 2nd rule view data show form user.blade.php
-// Route::view('users', 'user');
+Route::view('users', 'user');
 
 // 1st rule view data and data pass show form user.blade.php
 // Route::get('users/{name}', function ($name){
@@ -47,7 +49,30 @@ Route::get('users/{name}', [userController::class, 'loadView']);
 // Route::view('header', 'components/header');
 
 // view add
-Route::view('about', 'about');
+
 
 // test blade
 Route::get('test', [usingController::class, 'test']);
+
+// form
+Route::post('form', [formController::class, 'form']);
+
+// view form
+Route::view('form', 'form')->middleware('protectPage');
+
+// no access
+Route::view('noaccess', 'noaccess');
+
+// group middleware age Check
+Route::group(['middleware'=>['protectPage']],function(){
+    Route::view('about', 'about');
+});
+
+// db_connection
+Route::get('dbController', [db_controller::class, 'index']);
+
+// db_models
+Route::get('student', [db_controller::class, 'getData']);
+
+// api data
+Route::get('apiData', [db_controller::class, 'apiData']);
