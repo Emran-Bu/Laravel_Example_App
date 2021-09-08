@@ -6,6 +6,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\usingController;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\db_controller;
+use App\Http\Controllers\sessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,21 @@ Route::get('student', [db_controller::class, 'getData']);
 
 // api data
 Route::get('apiData', [db_controller::class, 'apiData']);
+
+// session
+// Route::view('login', 'login');
+Route::view('loginCheck', 'loginCheck');
+Route::post('user', [sessionController::class, 'UserLogin']);
+Route::get('logout', function () {
+    if(session()->has('fname')){
+        session()->pull('fname', null);
+    }
+    return redirect('login');
+});
+
+Route::get('login', function () {
+    if(session()->has('fname')){
+        return redirect('loginCheck');
+    }
+    return view('login');
+});
