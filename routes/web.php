@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 use App\Http\Controllers\userController;
 use App\Http\Controllers\usingController;
@@ -104,3 +105,11 @@ Route::post('userStore', [sessionController::class, 'flashLogin']);
 // upload image
 Route::view('upload', 'upload');
 Route::post('upload', [uploadController::class, 'uploadImg']);
+
+// localization
+Route::view('profile', 'profile');
+
+Route::get('profile/{lang}', function ($lang) {
+    App::setLocale($lang);
+    return view('profile');
+});
