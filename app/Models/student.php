@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class student extends Model
 {
     use HasFactory;
+
     public $table="language";
+    public $timestamps=false;
+
 }

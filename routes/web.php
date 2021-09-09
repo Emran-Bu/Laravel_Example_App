@@ -113,3 +113,7 @@ Route::get('profile/{lang}', function ($lang) {
     App::setLocale($lang);
     return view('profile');
 });
+
+// save data
+Route::view('add', 'addMember');
+Route::post('add', [db_controller::class, 'saveData']);

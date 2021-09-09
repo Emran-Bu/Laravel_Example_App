@@ -26,4 +26,18 @@ class db_controller extends Controller
         $data = Http::get("https://reqres.in/api/users?page=1");
         return view('showApi',['collection'=>$data['data']]);
     }
+
+    //
+    function saveData (Request $req){
+        $data = $req->input('fname');
+        $req->session()->flash('fname', $data);
+
+        $student = new student;
+        $student->std_name=$req->fname;
+        $student->std_city=$req->city;
+        $student->std_mobile=$req->number;
+        $student->save();
+
+        return redirect('add');
+    }
 }
