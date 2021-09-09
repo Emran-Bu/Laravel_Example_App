@@ -69,7 +69,7 @@ Route::group(['middleware'=>['protectPage']],function(){
     Route::view('about', 'about');
 });
 
-// db_connection n
+// db_connection
 Route::get('dbController', [db_controller::class, 'index']);
 
 // db_models
