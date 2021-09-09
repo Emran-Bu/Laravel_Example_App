@@ -95,3 +95,7 @@ Route::get('login', function () {
     }
     return view('login');
 });
+
+// flash login
+Route::view('userAdd', 'userAdd');
+Route::post('userStore', [sessionController::class, 'flashLogin']);

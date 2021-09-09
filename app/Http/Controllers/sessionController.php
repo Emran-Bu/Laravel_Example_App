@@ -12,4 +12,10 @@ class sessionController extends Controller
         $req->session()->put('fname', $data);
         return redirect('loginCheck');
     }
+
+    function flashLogin (Request $req){
+        $data = $req->input('fname');
+        $req->session()->flash('fname', $data);
+        return redirect('userAdd');
+    }
 }
