@@ -7,6 +7,7 @@ use App\Http\Controllers\usingController;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\db_controller;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\uploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +100,7 @@ Route::get('login', function () {
 // flash login
 Route::view('userAdd', 'userAdd');
 Route::post('userStore', [sessionController::class, 'flashLogin']);
+
+// upload image
+Route::view('upload', 'upload');
+Route::post('upload', [uploadController::class, 'uploadImg']);
