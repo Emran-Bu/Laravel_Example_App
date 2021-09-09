@@ -40,4 +40,10 @@ class db_controller extends Controller
 
         return redirect('add');
     }
+
+    // pagination show data
+    function show () {
+        $data = student::paginate(2);
+        return view('pagination', ['students'=>$data]);
+    }
 }

@@ -117,3 +117,6 @@ Route::get('profile/{lang}', function ($lang) {
 // save data
 Route::view('add', 'addMember');
 Route::post('add', [db_controller::class, 'saveData']);
+
+// pagination page
+Route::get('pagination', [db_controller::class, 'show']);
