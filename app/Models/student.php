@@ -9,7 +9,7 @@ class student extends Model
 {
     use HasFactory;
 
-    public $table="language";
+    // public $table="language";
     public $timestamps=false;
 
 }
