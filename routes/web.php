@@ -9,6 +9,7 @@ use App\Http\Controllers\formController;
 use App\Http\Controllers\db_controller;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\uploadController;
+use App\Http\Controllers\showFormData;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,3 +121,7 @@ Route::post('add', [db_controller::class, 'saveData']);
 
 // pagination page
 Route::get('pagination', [db_controller::class, 'show']);
+
+// show form data
+Route::view('showForm', 'showForm');
+Route::get('show', [showFormData::class, 'showData']);
