@@ -10,6 +10,7 @@ use App\Http\Controllers\db_controller;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\uploadController;
 use App\Http\Controllers\showFormData;
+use App\Http\Controllers\query_builder_controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,5 +133,8 @@ Route::get('delete/{id}', [showFormData::class, 'delete']);
 // Edit data
 Route::get('edit/{id}', [showFormData::class, 'edit']);
 Route::post('edit', [showFormData::class, 'update']);
+
+// query_builder_controller
+Route::get('builder', [query_builder_controller::class, 'operation']);
 
 
