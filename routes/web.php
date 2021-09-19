@@ -123,5 +123,14 @@ Route::post('add', [db_controller::class, 'saveData']);
 Route::get('pagination', [db_controller::class, 'show']);
 
 // show form data
-Route::view('showForm', 'showForm');
+// Route::view('showForm', 'showForm');
 Route::get('show', [showFormData::class, 'showData']);
+
+// delete data
+Route::get('delete/{id}', [showFormData::class, 'delete']);
+
+// Edit data
+Route::get('edit/{id}', [showFormData::class, 'edit']);
+Route::post('edit', [showFormData::class, 'update']);
+
+

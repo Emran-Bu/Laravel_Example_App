@@ -2,16 +2,19 @@
 <table border="1">
     <tr>
         <td>ID</td>
-        <td>Name</td>
-        <td>City</td>
-        <td>Mobile</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Action</td>
     </tr>
-    @foreach($showData as $key => $showDatas)
+    @foreach($showData as $showDatas)
         <tr>
-            <td>{{ $showDatas['std_id'] }}</td>
-            <td>{{ $showDatas['std_name'] }}</td>
-            <td>{{ $showDatas['std_city'] }}</td>
-            <td>{{ $showDatas['std_mobile'] }}</td>
+            <td>{{ $showDatas['id'] }}</td>
+            <td>{{ $showDatas['first_name'] }}</td>
+            <td>{{ $showDatas['last_name'] }}</td>
+            <td>
+                <a href={{ "delete/".$showDatas['id'] }}>Delete</a>
+                <a href={{ "edit/".$showDatas['id'] }}>Edit</a>
+            </td>
         </tr>
     @endforeach
 
