@@ -7,6 +7,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\usingController;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\db_controller;
+use App\Http\Controllers\join_controller;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\uploadController;
 use App\Http\Controllers\showFormData;
@@ -136,5 +137,8 @@ Route::post('edit', [showFormData::class, 'update']);
 
 // query_builder_controller
 Route::get('builder', [query_builder_controller::class, 'operation']);
+
+// Join table
+Route::get('join', [join_controller::class, 'joinTable']);
 
 
