@@ -142,3 +142,7 @@ Route::get('builder', [query_builder_controller::class, 'operation']);
 Route::get('join', [join_controller::class, 'joinTable']);
 
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
