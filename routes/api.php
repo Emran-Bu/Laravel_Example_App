@@ -29,3 +29,7 @@ Route::post('post', [testApiController::class, 'postData']);
 Route::put('update', [testApiController::class, 'updateData']);
 // delete data
 Route::delete('delete/{id?}', [testApiController::class, 'deleteData']);
+// search data
+Route::get('search/{name}', [testApiController::class, 'searchData']);
+// validation
+Route::post('validate', [testApiController::class, 'validateData']);
