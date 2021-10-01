@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testApiController;
+use App\Http\Controllers\testController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,6 @@ Route::delete('delete/{id?}', [testApiController::class, 'deleteData']);
 Route::get('search/{name}', [testApiController::class, 'searchData']);
 // validation
 Route::post('validate', [testApiController::class, 'validateData']);
+
+// upload file with api
+Route::post('file', [testController::class, 'uploadFile']);

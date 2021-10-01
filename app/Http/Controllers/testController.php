@@ -21,6 +21,13 @@ class testController extends Controller
         return student::all();
     }
 
+    public function uploadFile(Request $req)
+    {
+        //
+        $data = $req->file('file')->store('apiDocs');
+        return ['result'=>'File upload successfully ' . $data];
+    }
+
     /**
      * Show the form for creating a new resource.
      *
