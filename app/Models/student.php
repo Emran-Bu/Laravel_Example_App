@@ -11,5 +11,6 @@ class student extends Model
 
     // public $table="language";
     public $timestamps=false;
+    public $connection = "mysql2";
 
 }

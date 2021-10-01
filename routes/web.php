@@ -12,6 +12,7 @@ use App\Http\Controllers\sessionController;
 use App\Http\Controllers\uploadController;
 use App\Http\Controllers\showFormData;
 use App\Http\Controllers\query_builder_controller;
+use App\Http\Controllers\testController;
 
 /*
 |--------------------------------------------------------------------------
@@ -146,3 +147,6 @@ Route::get('join', [join_controller::class, 'joinTable']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+// multiple database connection
+Route::get('dbconn', [testController::class, 'index']);

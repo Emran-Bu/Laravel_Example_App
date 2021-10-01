@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\student;
 
 class testController extends Controller
 {
@@ -14,6 +16,9 @@ class testController extends Controller
     public function index()
     {
         //
+        // return DB::table('students')->get();
+        // return DB::connection('mysql2')->table('students')->get();
+        return student::all();
     }
 
     /**
